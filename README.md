@@ -1,3 +1,11 @@
+## 해당 레포 소개
+- [John Ahn님의 따라하면서 배우는 NestJS 강의](https://youtu.be/3JminDpCJNE)를 듣고 hands-on 하는 레포지토리
+- 학습 계기
+  - NEXTERS 동아리에서 기술 스택을 정할 때 코프링 vs nestjs 얘기가 나와서 학습해보려고 함.
+  - 함수형 프로그래밍, javascript 계열 공부가 앞으로 많은 도움이 되리라 생각.
+  - 프론트엔드 공부에 간접적으로 도움이 되리라 생각 (typescript)
+
+## NestJS 전용 README
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>

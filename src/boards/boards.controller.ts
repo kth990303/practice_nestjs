@@ -2,6 +2,7 @@ import { Body, Controller, Delete, Get, HttpCode, HttpStatus, Param, ParseIntPip
 import { Board, BoardStatus } from './board.model';
 import { BoardsService } from './boards.service';
 import { CreateBoardDto } from './dto/create-board.dto';
+import { BoardStatusValidationPipe } from './pipes/board-status-validation.pipe';
 
 @Controller('boards')
 export class BoardsController {
@@ -19,12 +20,12 @@ export class BoardsController {
     }
 
     @Get('/:id')
-    getBoardById(@Param('id', new ParseUUIDPipe({errorHttpStatusCode: HttpStatus.BAD_REQUEST})) id: string): Board {
+    getBoardById(@Param('id', new ParseUUIDPipe({errorHttpStatusCode: HttpStatus.NOT_ACCEPTABLE})) id: string): Board {
         return this.boardsService.getBoardById(id);
     }
 
     @Patch('/:id/status')
-    updateBoardStatus(@Param('id', ParseUUIDPipe) id: string, @Body('status') status: BoardStatus): Board {
+    updateBoardStatus(@Param('id', ParseUUIDPipe) id: string, @Body('status', BoardStatusValidationPipe) status: BoardStatus): Board {
         return this.boardsService.updateBoardStatus(id, status);
     }
 
